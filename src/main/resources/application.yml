@@ -6,6 +6,15 @@ server:
 spring:
   flyway:
     enabled: true
+  datasource:
+    url: jdbc:postgresql://localhost:15432/postgres
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+  jpa:
+    hibernate.ddl-auto: validate
+
+
 
 management:
   endpoints:

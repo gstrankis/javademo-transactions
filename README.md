@@ -17,18 +17,27 @@ This SpringBoot application demonstrates implementation of service that
 - Postgres database
 - Docker for running database locally
 
-## Get started
+## Run locally
 
 Prerequisites:
 
-- Java 17
+- Java 17 installed and JAVA_HOME configured
 - Docker - to run application locally
 
-To start application
+To start application:  
+start the database,  
+configure environment variables,    
+run the application.
 
-- start the database  
-  `docker compose up --detach`
-- configure environment variables  
-  `EXCHANGERATE_KEY={exchangerate.host api key}`
-- run the application  
-  `./gradlew bootRun`
+```
+docker compose up --detach
+export EXCHANGERATE_KEY={exchangerate.host api key}
+./gradlew bootRun
+```
+
+To stop database container:  
+`docker compose down`
+
+To stop database container and wipe out all data:  
+`docker compose down -v`
+
