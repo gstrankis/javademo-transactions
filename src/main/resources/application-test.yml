@@ -1,1 +1,5 @@
 spring.flyway.enabled: false
+
+app:
+  scheduling:
+    enabled: false #disable scheduling while executing tests

@@ -30,8 +30,9 @@ app:
   currencies: USD,EUR,GBP,JPY,CHF,CAD,MXN,PLN,SEK,NOK,RON,CZK,DKK
   external:
     exchangerate: # https://exchangerate.host/documentation
-      url: http://api.exchangerate.host
+      baseUrl: http://api.exchangerate.host
       key: ${EXCHANGERATE_KEY}
-      source: USD #source currency to load from exchangerate
-      currencies: USD,EUR,GBP,JPY,CHF,CAD,MXN,PLN,SEK,NOK,RON,CZK,DKK
-
+      sources: USD # comma-separated list of currencies for 'source' query param, like GET /live?...&source=USD
+      currencies: ${app.currencies}
+  scheduling:
+    enabled: true
