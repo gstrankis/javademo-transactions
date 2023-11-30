@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "terms": "https:\/\/currencylayer.com\/terms",
+  "privacy": "https:\/\/currencylayer.com\/privacy",
+  "timestamp": 1701192003,
+  "source": "USD",
+  "quotes": {
+    "USDEUR": 0.908575,
+    "USDGBP": 0.78677,
+    "USDJPY": 147.36801,
+    "USDCHF": 0.876435,
+    "USDCAD": 1.356485,
+    "USDMXN": 17.132099,
+    "USDPLN": 3.929236,
+    "USDSEK": 10.31527,
+    "USDNOK": 10.614115,
+    "USDRON": 4.516602,
+    "USDCZK": 22.0267,
+    "USDDKK": 6.77426
+  }
+}
