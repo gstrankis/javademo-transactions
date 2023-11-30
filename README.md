@@ -41,3 +41,5 @@ To stop database container:
 To stop database container and wipe out all data:  
 `docker compose down -v`
 
+To run all tests
+`./gradlew cleanTest test`

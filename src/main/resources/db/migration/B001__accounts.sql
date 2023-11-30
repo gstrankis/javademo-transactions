@@ -1,9 +1,9 @@
 CREATE TABLE accounts (
     id        bigint not null,
     version   int not null default 0,
-    client_id bigint,
-    currency  varchar(3),
-    balance   numeric,
+    client_id bigint not null,
+    currency  varchar(3) not null,
+    balance   numeric not null default 0,
     PRIMARY KEY (id)
 );
 

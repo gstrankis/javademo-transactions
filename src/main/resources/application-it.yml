@@ -1,0 +1,10 @@
+spring:
+  flyway:
+    enabled: true
+  datasource: # dynamic, provided by Testcontainer
+  jpa:
+    hibernate.ddl-auto: validate
+
+app:
+  scheduling:
+    enabled: false #disable scheduling while executing tests
