@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import lv.gstg.javademo.transactions.external.currencyrates.ExchangeRateProvider;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,8 @@ import static java.math.RoundingMode.HALF_EVEN;
 @Slf4j
 public class CurrencyConverter {
 
-    private static final String USD = "USD";
+    @Value("@{app.baseCurrency}")
+    String baseCurrency;
 
     private final ExchangeRateProvider rateProvider;
 
@@ -39,12 +41,13 @@ public class CurrencyConverter {
         return Collections.unmodifiableMap(rates);
     }
 
-    @Scheduled(initialDelay = 1, fixedRate = 60, timeUnit = TimeUnit.MINUTES)
+    // first update 15 seconds after startup, then once every hour
+    @Scheduled(initialDelay = 15, fixedRate = 60 * 60, timeUnit = TimeUnit.SECONDS)
     public void updateRates() {
         try {
             var rates = rateProvider.getLatestRates();
             this.rates = Map.copyOf(rates);
-            log.info("Rates update successful, # of entries: {}", rates.size());
+            log.info("Rates updated successful, {} entries stored", rates.size());
         } catch (Exception e) {
             log.warn("Failed to update rates: " + e.getMessage(), e);
         }
@@ -74,8 +77,8 @@ public class CurrencyConverter {
 
         // in order to calculate EUR/JPY rate we use USD/EUR and USD/JPY,
         // assuming rates have USD as base currency, and every supported currency XXX has USDXXX quote present
-        var rateUsdToX = rates.get(USD + fromCurrency);
-        var rateUsdToY = rates.get(USD + toCurrency);
+        var rateUsdToX = rates.get(baseCurrency + fromCurrency);
+        var rateUsdToY = rates.get(baseCurrency + toCurrency);
         if (rateUsdToX == null)
             throw new IllegalArgumentException("Currency '" + fromCurrency + "' is not supported");
         if (rateUsdToY == null)

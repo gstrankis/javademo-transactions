@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 @SpringBootTest(classes = ExchangeRateProvider.class)
 @ActiveProfiles("test")
-public class ExchangeRateProviderIT {
+public class ExchangeRateProviderIntegrationTest {
     @Autowired
     ExchangeRateProvider provider;
 

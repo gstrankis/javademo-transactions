@@ -7,7 +7,7 @@ spring:
   flyway:
     enabled: true
   datasource:
-    url: jdbc:postgresql://localhost:15432/postgres
+    url: jdbc:postgresql://host:port/postgres
     username: postgres
     password: postgres
     driverClassName: org.postgresql.Driver
@@ -37,6 +37,7 @@ springdoc:
 # Transactions Demo application
 app:
   currencies: USD,EUR,GBP,JPY,CHF,CAD,MXN,PLN,SEK,NOK,RON,CZK,DKK
+  baseCurrency: USD
   external:
     exchangerate: # https://exchangerate.host/documentation
       baseUrl: http://api.exchangerate.host

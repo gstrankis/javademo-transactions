@@ -1,6 +1,7 @@
 package lv.gstg.javademo.transactions.core;
 
 import lv.gstg.javademo.transactions.external.currencyrates.ExchangeRateProvider;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -21,6 +22,12 @@ public class CurrencyConverterTest {
 
     @InjectMocks
     CurrencyConverter converter;
+
+    @BeforeEach
+    void init() {
+        converter.baseCurrency = "USD";
+    }
+
 
     @Test
     void convert() {

@@ -32,7 +32,7 @@ run the application.
 ```
 docker compose up --detach
 export EXCHANGERATE_KEY={exchangerate.host api key}
-./gradlew bootRun
+./gradlew bootRun --args='--spring.profiles.active=local'
 ```
 
 To stop database container:  
