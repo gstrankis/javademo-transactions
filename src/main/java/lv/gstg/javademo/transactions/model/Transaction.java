@@ -40,8 +40,8 @@ public class Transaction extends BaseEntity {
     public String toString() {
         return "Transaction{" +
                 "createdAt=" + createdAt +
-                ", account=" + account +
-                ", transfer=" + transfer +
+                ", account=" + (account == null ? "null" : account.getId()) +
+                ", transfer=" + (transfer == null ? "null" : transfer.getId()) +
                 ", txType=" + txType +
                 ", amount=" + amount +
                 ", balanceAfter=" + balanceAfter +

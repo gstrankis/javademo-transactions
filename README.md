@@ -38,8 +38,12 @@ export EXCHANGERATE_KEY={exchangerate.host api key}
 To stop database container:  
 `docker compose down`
 
-To stop database container and wipe out all data:  
+To stop database container and wipe out all local data:  
 `docker compose down -v`
 
 To run all tests
-`./gradlew cleanTest test`
+`./gradlew clean test`
+
+Swagger UI
+http://localhost:8080/swagger-ui/index.html
+

@@ -17,3 +17,8 @@ app:
   external:
     exchangerate:
       key: ${EXCHANGERATE_KEY:notprovided}
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG

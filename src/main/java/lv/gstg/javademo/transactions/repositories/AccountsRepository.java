@@ -7,9 +7,9 @@ import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 public interface AccountsRepository extends JpaRepository<Account, Long> {
 
@@ -21,6 +21,6 @@ public interface AccountsRepository extends JpaRepository<Account, Long> {
 
     @Query("SELECT a from Account a WHERE a.id in (:accountIds)")
     @Lock(LockModeType.PESSIMISTIC_WRITE)
-    List<Account> findAllByIdAndLockForUpdate(@Param("accountIds") Set<Long> accountIds);
+    List<Account> findAllByIdAndLockForUpdate(@Param("accountIds") Collection<Long> accountIds);
 
 }

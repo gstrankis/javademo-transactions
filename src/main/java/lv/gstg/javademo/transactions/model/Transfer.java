@@ -54,8 +54,8 @@ public class Transfer extends BaseEntity {
     public String toString() {
         return "Transfer{" +
                 "createdAt=" + createdAt +
-                ", sourceAccount=" + sourceAccount +
-                ", targetAccount=" + targetAccount +
+                ", sourceAccount=" + (sourceAccount == null ? "null" : sourceAccount.getId()) +
+                ", targetAccount=" + (targetAccount == null ? "null" : targetAccount.getId()) +
                 ", amount=" + amount +
                 ", currency='" + currency + '\'' +
                 ", sourceCurrencyRate=" + sourceCurrencyRate +

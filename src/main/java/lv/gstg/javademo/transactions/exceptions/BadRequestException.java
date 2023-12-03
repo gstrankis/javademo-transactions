@@ -1,4 +1,4 @@
-package lv.gstg.javademo.transactions.core.exceptions;
+package lv.gstg.javademo.transactions.exceptions;
 
 import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
