@@ -16,24 +16,30 @@ This SpringBoot application demonstrates implementation of service that
 - Gradle as build tool
 - Postgres database
 - Docker for running database locally
+- Testcontainers for (almost) integration testing
+- MockMvc for testing of Web layer
 
 ## Run locally
 
-Prerequisites:
+### Prerequisites:
 
-- Java 17 installed and JAVA_HOME configured
-- Docker - to run application locally
+- Java 17
+- Docker
 
-To start application:  
-start the database,  
+### Run the application:
+
 configure environment variables,    
+start the database,  
 run the application.
 
 ```
-docker compose up --detach
 export EXCHANGERATE_KEY={exchangerate.host api key}
+docker compose up --detach
 ./gradlew bootRun --args='--spring.profiles.active=local'
 ```
+
+or create `env` on the basis of `env.sample` and execute  
+`./start-local-app.sh`
 
 To stop database container:  
 `docker compose down`
@@ -41,9 +47,10 @@ To stop database container:
 To stop database container and wipe out all local data:  
 `docker compose down -v`
 
-To run all tests
+Run all tests
 `./gradlew clean test`
 
-Swagger UI
+## Swagger UI
+
 http://localhost:8080/swagger-ui/index.html
 
