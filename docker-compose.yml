@@ -3,7 +3,7 @@ version: '3.5'
 services:
   postgres:
     container_name: txdemo-db
-    image: postgres:16
+    image: postgres:15.5
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres

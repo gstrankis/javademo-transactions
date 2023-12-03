@@ -55,6 +55,10 @@ public class CurrencyConverter {
 
     public BigDecimal convert(String fromCurrency, String toCurrency, BigDecimal amount) {
         var rate = findRate(fromCurrency, toCurrency);
+        return convertUsingRate(amount, rate);
+    }
+
+    public BigDecimal convertUsingRate(BigDecimal amount, BigDecimal rate) {
         return amount.multiply(rate).setScale(amount.scale(), HALF_EVEN);
     }
 

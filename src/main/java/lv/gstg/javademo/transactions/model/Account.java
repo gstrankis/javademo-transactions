@@ -3,10 +3,9 @@ package lv.gstg.javademo.transactions.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.math.BigDecimal;
 
@@ -14,8 +13,7 @@ import java.math.BigDecimal;
 @Table(name = "accounts")
 @Getter
 @Setter
-@ToString
-@Builder
+@NoArgsConstructor
 public class Account extends BaseEntity {
 
     @Column(name = "client_id")
@@ -29,4 +27,16 @@ public class Account extends BaseEntity {
 
     @Column
     BigDecimal balance;
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", version=" + version +
+                ", clientId=" + clientId +
+                ", accountNr='" + accountNr + '\'' +
+                ", currency='" + currency + '\'' +
+                ", balance=" + balance +
+                '}';
+    }
 }

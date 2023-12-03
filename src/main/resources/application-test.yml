@@ -8,7 +8,12 @@ spring:
     driverClassName: org.h2.Driver
   jpa:
     hibernate.ddl-auto: none
+    show-sql: true
+    properties.hibernate.format_sql: true
 
 app:
   scheduling:
     enabled: false #disable scheduling while executing tests
+  external:
+    exchangerate:
+      key: ${EXCHANGERATE_KEY:notprovided}
