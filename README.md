@@ -2,11 +2,11 @@
 
 ## Purpose
 
-This SpringBoot application demonstrates implementation of service that
+This is SpringBoot application that demonstrates a service that
 
-- maintains account data, including balance
-- processes transactions that transfer funds between accounts
-- usees currency exchange rates fetched from external source
+- maintains account and account history data
+- processes transfer funds requests
+- fetches currency exchange rates from external source
 
 ## Tech in use
 
@@ -17,7 +17,8 @@ This SpringBoot application demonstrates implementation of service that
 - Postgres database
 - Docker for running database locally
 - Testcontainers for (almost) integration testing
-- MockMvc for testing of Web layer
+- Spring MockMvc for testing of Web layer
+- Spring RestClient for access of external resources
 
 ## Run locally
 
