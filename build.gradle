@@ -72,3 +72,8 @@ compileJava {
             '-Amapstruct.defaultComponentModel=spring'
     ]
 }
+
+springBoot {
+    //See https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/htmlsingle/#integrating-with-actuator.build-info
+    buildInfo()
+}

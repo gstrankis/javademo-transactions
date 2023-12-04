@@ -2,23 +2,24 @@
 
 ## Purpose
 
-This is SpringBoot application that demonstrates a service that
+This is demo-type SpringBoot application that demonstrates a service that
 
-- maintains account and account history data
+- maintains account balance data
 - processes transfer funds requests
 - fetches currency exchange rates from external source
 
 ## Tech in use
 
+- SpringBoot
 - Spring Data JPA for transactional database access
 - Spring RestClient for access of external resources
 - Flyway for db migrations
 - Gradle as build tool
 - Postgres database
+- Pessimistic locking at database level
 - Docker for running database locally
 - Testcontainers for (almost) integration testing
-- Spring MockMvc for testing of Web layer
-- Spring RestClient for access of external resources
+- Spring MockMvc for Web layer testing
 
 ## Run locally
 

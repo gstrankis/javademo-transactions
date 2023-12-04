@@ -11,11 +11,11 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import java.util.Map;
 
 @ControllerAdvice
-public class WebResponseExceptionHandler extends ResponseEntityExceptionHandler {
+public class WebExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler({BadRequestException.class})
+    @ExceptionHandler(BadRequestException.class)
     public final ResponseEntity<Object> handleBadRequestException(Exception ex) {
-        return response(HttpStatus.NOT_FOUND, ex);
+        return response(HttpStatus.BAD_REQUEST, ex);
     }
 
     private ResponseEntity<Object> response(HttpStatus httpStatus, Exception ex) {
