@@ -6,6 +6,11 @@ import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+/**
+ * Transaction describes a deposition(credit) or withdrawal(debit) of funds to/from the {@link Account}
+ * on the basis of {@link Transfer} operation.<br>
+ * Transaction amount is in account's currency.
+ */
 @Entity
 @Table(name = "transactions")
 @Getter

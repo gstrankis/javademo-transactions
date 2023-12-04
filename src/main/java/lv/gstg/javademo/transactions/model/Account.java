@@ -9,6 +9,9 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 
+/**
+ * Entity describes an account, including current balance in account's currency.
+ */
 @Entity
 @Table(name = "accounts")
 @Getter
